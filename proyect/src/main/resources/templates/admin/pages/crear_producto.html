@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Servicio</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+
+  <link rel="stylesheet" th:href="@{/css/Chart.min.css}">
+
+  <link rel="stylesheet" th:href="@{/css/perfect-scrollbar.css}">
+  <link rel="stylesheet" th:href="@{/css/app.css}">
+  <link rel="shortcut icon" th:href="@{/img/favicon.svg}" type="image/x-icon">
+</head>
+<body>
+<div id="app"><!--Main content-->
+  <span th:replace="admin/fragments/sidebar :: sidebar"></span>
+  <div id="main">
+    <span th:replace="admin/fragments/header :: header"></span>
+    <div class="main-content container-fluid" layout:fragment="content"><!--dynamic content-->
+
+      <div class="row mb-4">
+        <div class="col-sm-4  ">
+        </div>
+        <div class="card-body">
+          <form th:action="@{/admin/pages/crear_producto}"  method="post" enctype="multipart/form-data">
+
+            <!-- <div class="mb-3">
+              <label for="Id_producto" class="form-label">Id producto</label>
+              <input type="text" class="form-control" name="Id_producto" id="Id_producto"
+                     aria-describedby="helpId" placeholder="Id">
+            </div> -->
+
+            <div class="mb-3">
+              <label for="nombre_producto" class="form-label">Nombre Producto</label>
+              <input type="text" class="form-control" name="nombre_producto" id="nombre_producto"
+                     aria-describedby="helpId" placeholder="nombre_producto" required minlength="5" maxlength="30">
+            </div>
+
+            <div class="mb-3">
+              <label for="descripcion_producto" class="form-label">Descripcion Producto</label>
+              <input type="text" class="form-control" name="descripcion_producto"
+                     id="descripcion_producto" aria-describedby="helpId"
+                     placeholder="descripcion_producto" required minlength="5" maxlength="50">
+            </div>
+
+            <!-- <div class="mb-3">
+              <label for="imagen">Imagen:</label>
+              <input type="file" id="imagen" name="imagen_producto" accept="image/*">
+            </div> -->
+
+            <button type="submit" class="btn btn-success">Agregar</button>
+
+            <a name="" id="" class="btn btn-primary" href="productos_page" role="button">Cancelar</a>
+          </form>
+        </div>
+
+        <div class="card-footer text-muted">
+        </div>
+      </div>
+
+    </div>
+    <span th:replace="admin/fragments/footer :: footer"></span>
+  </div>
+</div>
+
+
+<script th:src="@{/js/feather.min.js}"></script>
+<script th:src="@{/js/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/Chart.min.js}"></script>
+<script th:src="@{/js/apexcharts.min.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

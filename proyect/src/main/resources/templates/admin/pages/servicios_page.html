@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion de servicios</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/Chart.min.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/perfect-scrollbar.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="shortcut icon" th:href="@{/img/favicon.svg}" type="image/x-icon">
+</head>
+
+<body>
+
+<div id="app">
+    <!-- Main content -->
+    <span th:replace="admin/fragments/sidebar :: sidebar"></span>
+    <div id="main">
+        <!-- Content id -->
+
+        <span th:replace="admin/fragments/header :: header"></span>
+
+        <div class="main-content container-fluid" layout:fragment="content">
+            <!-- Dynamic content -->
+            <!-- you can replace this using page -->
+        </div>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">GESTION DE SERVICIOS</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Formulario pantalla principal -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Lista de servicios</h3>
+
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h4 class="card-title"></h4>
+                                <div class="d-flex">
+                                    <a href="/pdf/export" target="_blank">
+                                        <i data-feather="download"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="card-tools">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" name="table_search" class="form-control float-right"
+                                           placeholder="Search">
+
+                                    <div class="">
+                                        <a name="crear" id="crear" class="btn btn-primary" th:href="crear_servicio"
+                                           role="button">Agregar Servicio</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-success alert-dismissible" role="alert"
+                                 th:if="${alertMessage}">
+                                <p th:text="${alertMessage}"></p>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close">
+                                    &times;
+                                </button>
+                            </div>
+
+
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-hover text-nowrap">
+                                    <thead>
+                                    <tr>
+                                        <!-- <th>Id_servicio</th> -->
+                                        <th>Nombre_servicio</th>
+                                        <th>Tipo_servicio</th>
+                                        <th>Descripcion_servicio</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="servicio : ${servicios}" data-servicio-id="${servicio.id_servicio}">
+                                        <!-- <td th:text="${servicio.id_servicio}"></td> -->
+                                        <td th:text="${servicio.nombre_servicio}"></td>
+                                        <td th:text="${servicio.id_tipo_Servicio}"></td>
+                                        <td th:text="${servicio.descripcion_Servicio}"></td>
+                                        <td th:text="${servicio.precio}"></td>
+                                        <td>
+                                            <a class="btn btn-info"
+                                               th:href="@{/admin/pages/editar_servicio/{id}(id=${servicio.id_servicio})}"
+                                               role="button">Editar</a>
+
+                                            <a class="btn btn-danger eliminar-btn"
+                                               th:href="@{/admin/pages/eliminar_servicio/{id}(id=${servicio.id_servicio})}"
+                                               role="button" th:data-servicio-id="${servicio.id_servicio}">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span th:replace="admin/fragments/footer :: footer"></span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.eliminar-btn').on('click', function (e) {
+            e.preventDefault();
+
+           var servicioId = $(this).attr('data-servicio-id');
+
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: 'Esta acción no se puede deshacer',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+               $.ajax({
+    url: '/admin/pages/eliminar_servicio/' + servicioId,
+    type: 'DELETE',
+    success: function (data) {
+        if (data.success === 'true') {
+            // Encuentra la fila que contiene el botón de eliminar y elimínala
+            var row = $(this).closest('tr');
+            if (row.length > 0) {
+                row.remove();
+                Swal.fire('Eliminado!', 'El servicio ha sido eliminado.', 'success');
+            } else {
+                // Si `this` no apunta a la fila, intenta encontrarla de otra manera
+                row = $('a[data-servicio-id="' + servicioId + '"]').closest('tr');
+                if (row.length > 0) {
+                    row.remove();
+                    Swal.fire('Eliminado!', 'El servicio ha sido eliminado.', 'success');
+                } else {
+                    console.error('No se pudo encontrar la fila para eliminar.');
+                }
+            }
+        } else {
+            // Error al eliminar el servicio
+            Swal.fire('Error', data.message || 'Hubo un error al intentar eliminar el servicio.', 'error');
+        }
+    },
+});
+                }
+            });
+        });
+    });
+</script>
+
+<script th:src="@{/js/feather.min.js}"></script>
+<script th:src="@{/js/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/Chart.min.js}"></script>
+<script th:src="@{/js/apexcharts.min.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

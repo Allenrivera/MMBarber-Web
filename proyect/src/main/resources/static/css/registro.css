@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.head { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background: #01060acc;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar { 
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo { 
+    margin-left: 10px;
+}
+
+.logo a { 
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a{ 
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    box-shadow: 0 10px 25px rgba(6, 242, 250, 0.63);
+}
+.icons8-menu {
+    display: none;
+}
+.signupFrm {
+    background:url(Img/papel-tapiz-peluquero-fondo-marmol-negro.jpg) no-repeat center;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background-color: #02090f67;
+    width: 400px;
+    border-radius: 8px;
+    padding: 40px 40px;
+    box-shadow: 0 10px 25px rgb(6, 242, 250, 0.63);
+}
+
+.tittle {
+    color: white;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.inputcontainer { 
+    position:initial;
+    height: 10px;
+    width: 100%;
+    margin-bottom: 17px;
+}
+
+.input {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position:initial;
+    height: 200%;
+    width: 90%;
+    top: 0px;
+    left: 0px;
+    border: 1px solid #DADCE0;
+    border-radius: 15px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.788);
+}
+
+.label{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position:initial;
+    top: 15px;
+    left: 15px;
+    padding: 0 15px;
+    color: #ffffff;
+    font-size: 18px;
+    transition: 0.5s;
+    z-index: 0;
+}
+
+.btn {
+    display:inline-block;
+    margin-left: auto;
+    padding: 10px 15px;
+    border: none;
+    background-color: #2c3e50d5;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.btn:hover {
+        background: none;
+        transform: translateY(-2px);
+}
+
+.recuperation {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 5%;
+}
+
+.recuperation a {
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+    .head{
+            height: 40px;
+    }
+    .signupFrm {
+        height: 120vh;
+    }
+    .navbar {
+        display:none;
+    }
+    .icons8-menu{
+        margin-right: 30px;
+    }
+    
+    .icons8-menu { 
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNjAiIGhlaWdodD0iNjAiCnZpZXdCb3g9IjAsMCwyNTYsMjU2IgpzdHlsZT0iZmlsbDojMDAwMDAwOyI+CjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxnIHRyYW5zZm9ybT0ic2NhbGUoOC41MzMzMyw4LjUzMzMzKSI+PHBhdGggZD0iTTMsN2MtMC4zNjA2NCwtMC4wMDUxIC0wLjY5NjA4LDAuMTg0MzggLTAuODc3ODksMC40OTU4N2MtMC4xODE4MSwwLjMxMTUgLTAuMTgxODEsMC42OTY3NiAwLDEuMDA4MjVjMC4xODE4MSwwLjMxMTUgMC41MTcyNSwwLjUwMDk3IDAuODc3ODksMC40OTU4N2gyNGMwLjM2MDY0LDAuMDA1MSAwLjY5NjA4LC0wLjE4NDM4IDAuODc3ODksLTAuNDk1ODdjMC4xODE4MSwtMC4zMTE1IDAuMTgxODEsLTAuNjk2NzYgMCwtMS4wMDgyNWMtMC4xODE4MSwtMC4zMTE1IC0wLjUxNzI1LC0wLjUwMDk3IC0wLjg3Nzg5LC0wLjQ5NTg3ek0zLDE0Yy0wLjM2MDY0LC0wLjAwNTEgLTAuNjk2MDgsMC4xODQzOCAtMC44Nzc4OSwwLjQ5NTg3Yy0wLjE4MTgxLDAuMzExNSAtMC4xODE4MSwwLjY5Njc2IDAsMS4wMDgyNWMwLjE4MTgxLDAuMzExNSAwLjUxNzI1LDAuNTAwOTcgMC44Nzc4OSwwLjQ5NTg3aDI0YzAuMzYwNjQsMC4wMDUxIDAuNjk2MDgsLTAuMTg0MzggMC44Nzc4OSwtMC40OTU4N2MwLjE4MTgxLC0wLjMxMTUgMC4xODE4MSwtMC42OTY3NiAwLC0xLjAwODI1Yy0wLjE4MTgxLC0wLjMxMTUgLTAuNTE3MjUsLTAuNTAwOTcgLTAuODc3ODksLTAuNDk1ODd6TTMsMjFjLTAuMzYwNjQsLTAuMDA1MSAtMC42OTYwOCwwLjE4NDM4IC0wLjg3Nzg5LDAuNDk1ODdjLTAuMTgxODEsMC4zMTE1IC0wLjE4MTgxLDAuNjk2NzYgMCwxLjAwODI1YzAuMTgxODEsMC4zMTE1IDAuNTE3MjUsMC41MDA5NyAwLjg3Nzg5LDAuNDk1ODdoMjRjMC4zNjA2NCwwLjAwNTEgMC42OTYwOCwtMC4xODQzOCAwLjg3Nzg5LC0wLjQ5NTg3YzAuMTgxODEsLTAuMzExNSAwLjE4MTgxLC0wLjY5Njc2IDAsLTEuMDA4MjVjLTAuMTgxODEsLTAuMzExNSAtMC41MTcyNSwtMC41MDA5NyAtMC44Nzc4OSwtMC40OTU4N3oiPjwvcGF0aD48L2c+PC9nPgo8L3N2Zz4=') 50% 50% no-repeat;
+        background-size: 100%; 
+        
+    }
+}

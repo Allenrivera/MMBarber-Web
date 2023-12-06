@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <title> MYM BARBER</title>
+</head>
+<body>
+
+    <div class="head">
+
+        <div class="logo">
+            <a href="#">logo</a>
+        </div>
+
+        <nav class="navbar">
+            <a th:href="@{/index}">Inicio</a>
+            <a th:href="@{/servicios}">Servicios</a>
+            <a th:href="@{/productos}">Productos</a>
+            <a th:href="@{/nosotros}">Nosotros</a>
+            <a th:href="@{/contacto}">Contacto</a>
+
+        </nav>
+        
+        <div class="admin">
+            <a th:href="@{/admin/index}"i class="fa-solid fa-user-tie f-beat-fade" style="color: #ffffff;"></i></a>
+        </div>
+
+        <div class="icons8-menu"></div>
+    </div>  
+
+    <header class=" content header">
+        <h2 class="tittle"> MYM BARBER</h2>
+        <p> 
+            tus facere?
+        </p>
+
+        <div class="btn_home">
+            <a href="#" class="btn">Saber mas</a>
+            <a href="#" class="btn">Agendar Cita</a>
+        </div>
+    </header>
+
+    <section class="content sau">
+
+        <h2 class="tittle"> Productos</h2>
+        <p> "En nuestra tienda de productos de barbería, te invitamos a sumergirte en un mundo de elegancia y cuidado personal masculino. Con una cuidadosa selección de productos premium, estamos comprometidos en ofrecerte lo mejor para realzar tu estilo único.</p>
+
+        <!-- <div class="box-container">
+
+            <div class="box">
+                <i class="fab fa-angular"></i>
+                <h3> lorem</h3>
+                <p> Nemo quis dolor sapiente culpa voluptatem</p>
+            </div>
+
+            <div class="box">
+                <i class="fab fa-css3"></i>
+                <h3> lorem</h3>
+                <p> Nemo quis dolor sapiente culpa voluptatem</p>
+            </div>
+
+            <div class="box">   
+                <i class="fab fa-android"></i>
+                <h3> lorem</h3>
+                <p> Nemo quis dolor sapiente culpa voluptatem</p>
+            </div>
+
+
+        </div> -->
+
+    </section>
+
+    <section class="content services">
+
+        <article class="contain">
+            <h2 class="tittle">Servicios</h2>
+            <p> En nuestra barbería, la excelencia se encuentra en cada detalle de nuestros servicios de
+                alta calidad. Sumérgete en la experiencia definitiva de cuidado y estilo que ofrecemos para}
+                hombres modernos y con estilo.
+            </p>
+
+            <a href="#" class="btn"> Ver servicios</a>
+
+        </article>
+
+    </section>
+
+    <section class="content about">
+
+            <h2 class="tittle">Nosotros</h2>
+            
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Reprehenderit non, veritatis temporibus cupiditate sit necessitatibus magni blanditiis excepturi magnam velit.
+                Dolorum, dolore vero? Nemo quis dolor sapiente culpa voluptatem earum.
+            </p>
+
+            <a href="#" class="btn">Saber mas</a>
+
+    </section>
+
+</body>
+</html>

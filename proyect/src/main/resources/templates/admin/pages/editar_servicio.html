@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Editar Servicio</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+
+    <link rel="stylesheet" th:href="@{/css/Chart.min.css}">
+
+    <link rel="stylesheet" th:href="@{/css/perfect-scrollbar.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="shortcut icon" th:href="@{/img/favicon.svg}" type="image/x-icon">
+</head>
+<body>
+<div id="app"><!--Main content-->
+    <span th:replace="admin/fragments/sidebar :: sidebar"></span>
+    <div id="main"><!--Content id-->
+        <span th:replace="admin/fragments/header :: header"></span>
+        <div class="main-content container-fluid" layout:fragment="content">
+
+            <div class="row mb-4">
+                <div class="col-sm-4  ">
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/admin/pages/editar_servicio/{id}(id=${editarServicio.idServicio})}" method="post">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Id servicio</label>
+                            <input type="hidden" th:field="${editarServicio.idServicio}" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="nombre_servicio" class="form-label">Nombre servicio</label>
+                            <input value="" type="text"  th:field="${editarServicio.nombreServicio}" class="form-control" name="nombre_servicio" id="nombre_servicio" aria-describedby="helpId" placeholder="nombre_servicio">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Id_tipo_servicio" class="form-label">Tipo_servicio</label>
+                            <input value= "" type="text" th:field="${editarServicio.idTipoServicio}" class="form-control" name="Id_tipo_servicio" id="Id_tipo_servicio" aria-describedby="helpId" placeholder="Id_tipo_servicio">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Descripcion_servicio" class="form-label">Descripcion_servicio</label>
+                            <input value="" th:field="${editarServicio.descripcionServicio}" class="form-control" name="Descripcion_servicio" id="Descripcion_servicio" aria-describedby="helpId" placeholder="Descripcion_servicio">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="precio" class="form-label">Precio</label>
+                            <input value="" type="text"  th:field="${editarServicio.precio}" class="form-control" name="precio" id="precio" aria-describedby="helpId" placeholder="precio">
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Agregar</button>
+
+                        <a name="" id="" class="btn btn-primary" href="/admin/pages/servicios_page" role="button">Cancelar</a>
+                    </form>
+                </div>
+
+                <div class="card-footer text-muted">
+                </div>
+            </div>
+
+
+        </div>
+        <span th:replace="admin/fragments/footer :: footer"></span>
+    </div>
+</div>
+
+
+<script th:src="@{/js/feather.min.js}"></script>
+<script th:src="@{/js/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/Chart.min.js}"></script>
+<script th:src="@{/js/apexcharts.min.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

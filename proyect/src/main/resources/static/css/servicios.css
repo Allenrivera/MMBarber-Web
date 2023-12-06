@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.head {
+    display:flex;
+    align-items: center;
+    justify-content:flex-end;
+    height: 63px;
+    background: #12185300;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    display:flex;
+    margin-left: 900px;
+    margin-right: 200px;
+    margin-top: 100PX;
+}
+
+.logo{
+    margin-left: 80px;
+    margin-top: 90px;
+}
+
+.logo a { 
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a {
+    justify-content: end;
+    display:inline;
+    padding: 15px 15px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    box-shadow: 0 10px 25px rgba(6, 242, 250, 0.63);
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    height: 65vh !important;
+    background: url(/img//pexels-dmitry-zvolskiy-1570806.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.serv_page {
+    margin-top: 450px;
+    font-size: 50px;
+    font-weight: 600px;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    margin-right: 650px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.services{
+    height: 100vh !important;
+}
+.tittle{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 700px;
+    margin-top: 150px;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+}
+
+.description{
+    margin-top: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    color: gray;
+}
+
+@media screen and (max-width: 1024px) {
+    .head{
+            height: auto;
+    }
+    .tittle {
+        margin-bottom: 0;
+        font-size: 40px;
+        height: 11rem; 
+    }
+
+    .sau {
+        height: 120vh;
+    }
+
+    .navbar {
+        display:none;
+    }
+    .icons8-menu{
+        margin-right: 30px;
+    }
+    
+    .icons8-menu { 
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNjAiIGhlaWdodD0iNjAiCnZpZXdCb3g9IjAsMCwyNTYsMjU2IgpzdHlsZT0iZmlsbDojMDAwMDAwOyI+CjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxnIHRyYW5zZm9ybT0ic2NhbGUoOC41MzMzMyw4LjUzMzMzKSI+PHBhdGggZD0iTTMsN2MtMC4zNjA2NCwtMC4wMDUxIC0wLjY5NjA4LDAuMTg0MzggLTAuODc3ODksMC40OTU4N2MtMC4xODE4MSwwLjMxMTUgLTAuMTgxODEsMC42OTY3NiAwLDEuMDA4MjVjMC4xODE4MSwwLjMxMTUgMC41MTcyNSwwLjUwMDk3IDAuODc3ODksMC40OTU4N2gyNGMwLjM2MDY0LDAuMDA1MSAwLjY5NjA4LC0wLjE4NDM4IDAuODc3ODksLTAuNDk1ODdjMC4xODE4MSwtMC4zMTE1IDAuMTgxODEsLTAuNjk2NzYgMCwtMS4wMDgyNWMtMC4xODE4MSwtMC4zMTE1IC0wLjUxNzI1LC0wLjUwMDk3IC0wLjg3Nzg5LC0wLjQ5NTg3ek0zLDE0Yy0wLjM2MDY0LC0wLjAwNTEgLTAuNjk2MDgsMC4xODQzOCAtMC44Nzc4OSwwLjQ5NTg3Yy0wLjE4MTgxLDAuMzExNSAtMC4xODE4MSwwLjY5Njc2IDAsMS4wMDgyNWMwLjE4MTgxLDAuMzExNSAwLjUxNzI1LDAuNTAwOTcgMC44Nzc4OSwwLjQ5NTg3aDI0YzAuMzYwNjQsMC4wMDUxIDAuNjk2MDgsLTAuMTg0MzggMC44Nzc4OSwtMC40OTU4N2MwLjE4MTgxLC0wLjMxMTUgMC4xODE4MSwtMC42OTY3NiAwLC0xLjAwODI1Yy0wLjE4MTgxLC0wLjMxMTUgLTAuNTE3MjUsLTAuNTAwOTcgLTAuODc3ODksLTAuNDk1ODd6TTMsMjFjLTAuMzYwNjQsLTAuMDA1MSAtMC42OTYwOCwwLjE4NDM4IC0wLjg3Nzg5LDAuNDk1ODdjLTAuMTgxODEsMC4zMTE1IC0wLjE4MTgxLDAuNjk2NzYgMCwxLjAwODI1YzAuMTgxODEsMC4zMTE1IDAuNTE3MjUsMC41MDA5NyAwLjg3Nzg5LDAuNDk1ODdoMjRjMC4zNjA2NCwwLjAwNTEgMC42OTYwOCwtMC4xODQzOCAwLjg3Nzg5LC0wLjQ5NTg3YzAuMTgxODEsLTAuMzExNSAwLjE4MTgxLC0wLjY5Njc2IDAsLTEuMDA4MjVjLTAuMTgxODEsLTAuMzExNSAtMC41MTcyNSwtMC41MDA5NyAtMC44Nzc4OSwtMC40OTU4N3oiPjwvcGF0aD48L2c+PC9nPgo8L3N2Zz4=') 50% 50% no-repeat;
+        background-size: 100%; 
+        
+    }
+
+}
+
+
+

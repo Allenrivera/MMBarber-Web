@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.head {
+    display:flex;
+    align-items: center;
+    justify-content:flex-end;
+    height: 63px;
+    background: #04072200;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    display:flex;
+    margin-left: 900px;
+    margin-right: 200px;
+    margin-top: 100PX;
+}
+
+.logo{
+    margin-left: 80px;
+    margin-top: 90px;
+}
+
+.logo a { 
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a {
+    justify-content: end;
+    display:inline;
+    padding: 15px 15px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    box-shadow: 0 10px 25px rgba(6, 242, 250, 0.63);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    height: 60vh;
+    background: url(/img/Productos.jpg) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    
+}
+
+.content { 
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.prod_page {
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+}
+
+p {
+    font-size: 25px;
+    color: white;
+}
+
+.container-items{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 90px;
+    margin-left: 40px ;
+}
+
+.item{
+    border-radius: 10px;
+}
+
+.item:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.info-product{
+    padding: 15px 30px; 
+}
+
+.item img{
+    width: 70%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.price{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}

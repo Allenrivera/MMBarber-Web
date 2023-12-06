@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Servicio</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+
+    <link rel="stylesheet" th:href="@{/css/Chart.min.css}">
+
+    <link rel="stylesheet" th:href="@{/css/perfect-scrollbar.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="shortcut icon" th:href="@{/img/favicon.svg}" type="image/x-icon">
+</head>
+<body>
+<div id="app"><!--Main content-->
+    <span th:replace="admin/fragments/sidebar :: sidebar"></span>
+    <div id="main">
+        <span th:replace="admin/fragments/header :: header"></span>
+        <div class="main-content container-fluid" layout:fragment="content"><!--dynamic content-->
+            <div class="row mb-4">
+                <div class="col-sm-4  ">
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/admin/pages/crear_servicio}"  method="post">
+
+
+                       <!--<div class="mb-3">
+                            <label for="Id_servicio" class="form-label">Id servicio</label>
+                            <input type="number" class="form-control" name="Id_servicio" id="Id_servicio"
+                                   aria-describedby="helpId" placeholder="Id_servicio" required>
+                        </div> -->
+
+                        <div class="mb-3">
+                            <label for="nombre_servicio" class="form-label">Nombre servicio</label>
+                            <input type="text" class="form-control" name="nombre_servicio" id="nombre_servicio"
+                                   aria-describedby="nombre_servicio_help" placeholder="nombre_servicio" minlength="5" maxlength="30" required
+                                   pattern="[A-Za-z\s]+">
+                            <div id="nombre_servicio_help" class="form-text">Ingresa un nombre válido (solo letras y espacios).</div>
+                        </div>
+
+                       <div class="mb-3">
+                            <label for="Id_tipo_servicio" class="form-label">Tipo_servicio</label>
+                            <input type="number" class="form-control" name="Id_tipo_servicio" id="Id_tipo_servicio"
+                                   aria-describedby="helpId" placeholder="Id_tipo_servicio" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Descripcion_servicio" class="form-label">Descripcion_servicio</label>
+                            <input type="text" class="form-control" name="Descripcion_servicio" id="Descripcion_servicio"
+                                   aria-describedby="descripcion_servicio_help" placeholder="Descripcion_servicio" minlength="5" maxlength="50" required>
+                            <div id="descripcion_servicio_help" class="form-text">Ingresa una descripción válida.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="precio" class="form-label">Precio</label>
+                            <input type="number" min="100" step="1" class="form-control" name="precio" id="precio" aria-describedby="precio_help" placeholder="precio" required>
+                            <div id="precio_help" class="form-text">Ingresa un precio válido (mínimo 100).</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Agregar</button>
+
+                        <a name="" id="" class="btn btn-primary" href="servicios_page" role="button">Cancelar</a>
+                    </form>
+                </div>
+
+                <div class="card-footer text-muted">
+                </div>
+            </div>
+        </div>
+        <span th:replace="admin/fragments/footer :: footer"></span>
+    </div>
+</div>
+
+
+<script th:src="@{/js/feather.min.js}"></script>
+<script th:src="@{/js/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/Chart.min.js}"></script>
+<script th:src="@{/js/apexcharts.min.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
